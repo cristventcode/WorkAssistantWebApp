@@ -1,0 +1,54 @@
+﻿@model WorkLibrary.WorkDay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkDay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Start)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkLoad)
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.WorkLoad)
+            {
+                <p> @item.TaskId @item.Title @item.Comment @item.Start @item.End</p>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WorkDayId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
