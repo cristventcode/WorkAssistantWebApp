@@ -1,7 +1,7 @@
 ﻿@model WorkLibrary.WorkDay
 
 @{
-    ViewBag.Title = "Index";
+
 }
 
 <h2>Index</h2>
@@ -45,12 +45,49 @@
         <td>
             @Html.DisplayFor(model => model.Active)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.WorkDayId }) |
-            @Html.ActionLink("Details", "Details", new { id = Model.WorkDayId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = Model.WorkDayId })
-        </td>
     </tr>
-
-
 </table>
+
+<br />
+
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4> Quick Add </h4>
+            </div>
+
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="sel1">Select list:</label>
+                    <select class="form-control" id="pulled-selection-holder">
+                    </select>
+                </div>
+                <button id="quick-add-btn" class="btn btn-default btn-sm"> Add </button>
+
+                <hr />
+                <div id="added-product-holder" class="form-group">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-8 panel-default">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4> Stock Task Manager </h4>
+            </div>
+
+            <div class="panel-body">
+                <p> Stocking List</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/getContent.js");
+}

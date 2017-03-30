@@ -61,7 +61,7 @@ namespace WorkAssistantWebApp.Controllers
                 _workHistory.EditWordDay(dayEdit);
                 return RedirectToAction("Index");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -70,7 +70,7 @@ namespace WorkAssistantWebApp.Controllers
         // GET: Work/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_workHistory.GetWorkDay(id));
         }
 
         // POST: Work/Delete/5
@@ -80,7 +80,7 @@ namespace WorkAssistantWebApp.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                _workHistory.DeleteWorkDay(id);
                 return RedirectToAction("Index");
             }
             catch

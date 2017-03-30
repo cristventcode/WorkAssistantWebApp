@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace WorkLibrary
 {
-    public class WorkRepository
+    public class WorkRepository : IWorkRepository
     {
         public static List<WorkDay> _workList = new List<WorkDay>();
-        public static int idCounter = 0;
+        public static List<Product> _productList = new List<Product>();
+
+        public static int _workDayIdCounter = 0;
 
         public WorkRepository()
         {
@@ -17,11 +19,16 @@ namespace WorkLibrary
             {
                 AddSampleDays();
             }
+
+            if (_productList.Count == 0)
+            {
+                AddSampleProducts();
+            }
         }
 
         public void AddDay(WorkDay newDay)
         {
-            newDay.WorkDayId = idCounter++;
+            newDay.WorkDayId = _workDayIdCounter++;
             _workList.Add(newDay);
         }
 
@@ -33,6 +40,11 @@ namespace WorkLibrary
         public WorkDay GetWorkDay(int id)
         {
             return _workList.Find(day => day.WorkDayId == id);
+        }
+
+        public void DeleteWorkDay(int id)
+        {
+            _workList.Remove(GetWorkDay(id));
         }
 
 
@@ -72,6 +84,62 @@ namespace WorkLibrary
             AddDay(day2);
         }
 
+        // Below this is your PRODUCT managment
+
+        public static int _productIdCounter = 0;
+
+        public void AddProduct(Product newProduct)
+        {
+            newProduct.ProductId = _productIdCounter++;
+            _productList.Add(newProduct);
+        }
+
+        public List<string> GetProductAll()
+        {
+            List<string> productNameList = new List<string>();
+
+            foreach(var product in _productList)
+            {
+                productNameList.Add(product.Name);
+            }
+
+            return productNameList.ToList();
+        }
+
+        public Product GetProduct(int id)
+        {
+            return _productList.Find(product => product.ProductId == id);
+        }
+
+
+        public void AddSampleProducts()
+        {
+            Product newProduct1 = new Product()
+            {
+                Name = "Citric Acid",
+                OurLot = "449IN" + DateTime.Now.Month,
+                ManufacturerLot = "5701213"
+            };
+
+            AddProduct(newProduct1);
+
+            Product newProduct2 = new Product()
+            {
+                Name = "Beet Root Powder",
+                OurLot = "440IN" + DateTime.Now.Month,
+                ManufacturerLot = "1117160650"
+            };
+            AddProduct(newProduct2);
+
+            Product newProduct3 = new Product()
+            {
+                Name = "Dimethicone 1000",
+                OurLot = "439IN" + DateTime.Now.Month,
+                ManufacturerLot = "J10921C22005"
+            };
+            AddProduct(newProduct3);
+
+        }
 
     }
 }
