@@ -9,25 +9,47 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<br />
+<h4> Active Day</h4>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Day)
-        </th>
-        <th></th>
-    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Active == true)
+        {
+            <tr>
+                <td>
+                    @item.Day - @item.Date.ToShortDateString()
+                </td>
+                <td>
+                    @Html.ActionLink("Workload Actions", "../DayWorkLoad/Index", new { id = item.WorkDayId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId })
+                </td>
+            </tr>
+        }
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Day)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WorkDayId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WorkDayId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WorkDayId })
-        </td>
-    </tr>
-}
+</table>
+<hr />
+<h4> Closed Day</h4>
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        if (item.Active == false)
+        {
+            <tr>
+                <td>
+                    @item.Day - @item.Date.ToShortDateString()
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId })
+                </td>
+            </tr>
+        }
+    }
 
 </table>

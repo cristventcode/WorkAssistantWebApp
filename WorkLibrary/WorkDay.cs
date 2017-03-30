@@ -18,5 +18,7 @@ namespace WorkLibrary
         public List<Task> WorkLoad { get; set; }
 
         public string Day { get; set; }
+        public DateTime Date { get; set; }
+        public bool Active { get; set; }
     }
 }

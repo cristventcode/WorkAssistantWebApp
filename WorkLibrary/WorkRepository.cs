@@ -13,7 +13,10 @@ namespace WorkLibrary
 
         public WorkRepository()
         {
-            AddSampleDays();
+            if (_workList.Count == 0)
+            {
+                AddSampleDays();
+            }
         }
 
         public void AddDay(WorkDay newDay)
@@ -45,6 +48,7 @@ namespace WorkLibrary
                 Start = "9:30 PM",
                 End = "10:45 PM",
                 Day = "Friday",
+                Active = false,
                 WorkLoad = new List<Task>
                 {
                     new Task {TaskId = 1, Title = "Clean Up", Comment = "Took out the trash" },
@@ -58,6 +62,7 @@ namespace WorkLibrary
                 Start = "9:30 PM",
                 End = "10:45 PM",
                 Day = "Saturday",
+                Active = false,
                 WorkLoad = new List<Task>
                 {
                     new Task {TaskId = 3, Title = "Computer Work", Comment = "Made all the new labels" },

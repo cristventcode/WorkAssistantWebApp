@@ -179,6 +179,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DayWorkLoadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
@@ -264,6 +265,7 @@
     <Content Include="Views\Work\Details.cshtml" />
     <Content Include="Views\Work\Edit.cshtml" />
     <Content Include="Views\Work\Create.cshtml" />
+    <Content Include="Views\DayWorkLoad\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

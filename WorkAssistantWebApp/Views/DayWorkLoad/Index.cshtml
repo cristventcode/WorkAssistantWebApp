@@ -1,0 +1,56 @@
+﻿@model WorkLibrary.WorkDay
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Start)
+        </td>
+        <td>
+            @(Model.End == null ? Html.Raw("<span> Pending </span>") : Html.DisplayFor(model => model.End))
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Day)
+        </td>
+        <td>
+            @Model.Date.ToShortDateString()
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Active)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.WorkDayId }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.WorkDayId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.WorkDayId })
+        </td>
+    </tr>
+
+
+</table>

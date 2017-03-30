@@ -1,4 +1,7 @@
-﻿<div class="row">
+﻿@model IEnumerable<WorkLibrary.WorkDay>
+
+
+<div class="row">
     <br />
     <div class="container">
         <h4> New </h4>
@@ -6,10 +9,10 @@
         <hr />
         <h4> Recent Days </h4>
         <ul class="list-group">
-            <li class="list-group-item"> Day 1 </li>
-            <li class="list-group-item"> Day 2 </li>
-            <li class="list-group-item"> Day 3 </li>
-            <li class="list-group-item"> Day 4 </li>
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item"> @item.Day - @item.Date.ToShortDateString() </li>
+            }
         </ul>
         <a href="~/Work/Index"><button class="btn btn-xs">All History</button></a>
     </div>
