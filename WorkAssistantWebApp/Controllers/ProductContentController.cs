@@ -34,6 +34,13 @@ namespace WorkAssistantWebApp.Controllers
             return _productHandler.GetProductAll();
         }
 
+        [Route("api/productcontent/getProductInfo")]
+        [HttpGet]
+        public Product getProductInfo(string productName)
+        {
+            return _productHandler.GetProductByName(productName);
+        }
+
         // GET: api/ProductContent/5
         public string Get(int id)
         {
@@ -41,8 +48,9 @@ namespace WorkAssistantWebApp.Controllers
         }
 
         // POST: api/ProductContent
-        public void Post([FromBody]string value)
+        public void Post(int workdayid, [FromBody]string newtask)
         {
+
         }
 
         // PUT: api/ProductContent/5

@@ -11,9 +11,11 @@ namespace WorkLibrary
     {
         [Required]
         public int TaskId {get; set;}
+        public int WorkDayId { get; set; }
         public string Title { get; set; }
         public string Start { get; set; }
         public string End { get; set; }
         public string Comment { get; set; }
+        public bool complete { get; set; }
     }
 }

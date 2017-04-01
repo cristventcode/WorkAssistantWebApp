@@ -106,11 +106,15 @@ namespace WorkLibrary
             return productNameList.ToList();
         }
 
-        public Product GetProduct(int id)
+        public Product GetProductById(int id)
         {
             return _productList.Find(product => product.ProductId == id);
         }
 
+        public Product GetProductByName(string productName)
+        {
+            return _productList.Find(product => product.Name == productName);
+        }
 
         public void AddSampleProducts()
         {
