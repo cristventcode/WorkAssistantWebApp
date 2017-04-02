@@ -18,7 +18,7 @@
         {
             <tr>
                 <td>
-                    @item.Day - @item.Date.ToShortDateString()
+                    @item.Day - @item.Date
                 </td>
                 <td>
                     @Html.ActionLink("Workload Actions", "../DayWorkLoad/Index", new { id = item.WorkDayId }) |
@@ -41,7 +41,7 @@
         {
             <tr>
                 <td>
-                    @item.Day - @item.Date.ToShortDateString()
+                    @item.Day - @item.Date
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) |

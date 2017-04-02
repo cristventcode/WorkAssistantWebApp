@@ -11,7 +11,7 @@
         <ul class="list-group">
             @foreach (var item in Model)
             {
-                <li class="list-group-item"> @item.Day - @item.Date.ToShortDateString() </li>
+                <li class="list-group-item"> @item.Day - @item.Date </li>
             }
         </ul>
         <a href="~/Work/Index"><button class="btn btn-xs">All History</button></a>

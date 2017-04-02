@@ -15,5 +15,8 @@ namespace WorkLibrary
         public string Name { get; set; }
         public string ManufacturerLot { get; set; }
         public string OurLot { get; set; }
+        public int CurrentStock { get; set; }
+        public int MinimumStockAmount { get; set; }
+
     }
 }

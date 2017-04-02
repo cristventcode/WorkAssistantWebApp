@@ -12,103 +12,41 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Start)
+            @Html.DisplayNameFor(model => model.WorkLoad[0].Size)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.End)
+            @Html.DisplayNameFor(model => model.WorkLoad[0].Quantity)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Day)
+            @Html.DisplayNameFor(model => model.WorkLoad[0].Start)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.WorkLoad[0].End)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Active)
-        </th>
-        <th></th>
     </tr>
-
-    <tr>
-        <td>
-            @Html.DisplayFor(model => model.Start)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.End)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Day)
-        </td>
-        <td>
-            @Model.Date.ToShortDateString()
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Active)
-        </td>
-    </tr>
+    @foreach (var item in Model.WorkLoad)
+    {
+        <tr>
+            <td>
+                @Html.Raw(item.Size)
+            </td>
+            <td>
+                @Html.Raw(item.Quantity)
+            </td>
+            <td>
+                @Html.Raw(item.Start)
+            </td>
+            <td>
+                @Html.Raw(item.End)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StockItemId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StockItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StockItemId })
+            </td>
+        </tr>
+    }
 </table>
-
-<br />
-<div class="container">
-    <div class="row">
-        <div class="well col-xs-12 col-sm-3">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <span> Workload Count: </span><b>@Html.Raw(Model.WorkLoad.Count)</b>
-                </li>
-                <li class="list-group-item">
-                    <span> WorkDay Id: </span><span id="workday-id">@Html.Raw(Model.WorkDayId)</span>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-xs-12 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4> Quick Add </h4>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label for="sel1">Select list:</label>
-                    <select class="form-control" id="pulled-selection-holder"></select>
-                </div>
-                <button id="quick-add-btn" type="button" class="btn btn-default btn-sm"> Add </button>
-
-                <hr />
-                <div id="pending-holder" class="hidden">
-                    <h5> Pending Stock </h5>
-                    <div id="pending-list">
-                        <div class="input-group">
-                        </div>
-                    </div>
-
-                    <br />
-                    <a id="reset-pending-list" class="btn btn-xs btn-default"> Reset List </a>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-8 panel-default">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4> Active Item </h4>
-            </div>
-
-            <div class="panel-body">
-                <p> Stocking List</p>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 @section Scripts{
     @Scripts.Render("~/Scripts/getContent.js");

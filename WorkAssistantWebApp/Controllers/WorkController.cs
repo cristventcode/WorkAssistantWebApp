@@ -9,7 +9,15 @@ namespace WorkAssistantWebApp.Controllers
 {
     public class WorkController : Controller
     {
-        public static WorkRepository _workHistory = new WorkRepository();
+        private static IWorkRepository _workHistory;
+
+        public WorkController()
+        {
+            if (_workHistory == null)
+            {
+                _workHistory = new WorkRepoDb();
+            }
+        }
 
         // GET: Work
         public ActionResult Index()
@@ -58,7 +66,7 @@ namespace WorkAssistantWebApp.Controllers
             try
             {
                 // TODO: Add update logic here
-                _workHistory.EditWordDay(dayEdit);
+                _workHistory.EditWorkDay(dayEdit);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

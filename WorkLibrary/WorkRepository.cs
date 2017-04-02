@@ -48,7 +48,7 @@ namespace WorkLibrary
         }
 
 
-        public void EditWordDay(WorkDay dayEdit)
+        public void EditWorkDay(WorkDay dayEdit)
         {
             _workList[_workList.IndexOf(GetWorkDay(dayEdit.WorkDayId))] = dayEdit;
         }
@@ -60,11 +60,11 @@ namespace WorkLibrary
                 Start = "9:30 PM",
                 End = "10:45 PM",
                 Day = "Friday",
-                Active = false,
-                WorkLoad = new List<Task>
+                Active = true,
+                WorkLoad = new List<StockItem>
                 {
-                    new Task {TaskId = 1, Title = "Clean Up", Comment = "Took out the trash" },
-                    new StockTask {TaskId = 2, Title = "Stocked", Comment = "Made EO", Quantity = 2, Size = "1/2 oz" }
+                   new StockItem {Size="1.5 Lb", Quantity = 85 },
+                   new StockItem {Size= "1/2 Lb", Quantity = 14}
                 }
             };
             AddDay(day1);
@@ -74,11 +74,11 @@ namespace WorkLibrary
                 Start = "9:30 PM",
                 End = "10:45 PM",
                 Day = "Saturday",
-                Active = false,
-                WorkLoad = new List<Task>
+                Active = true,
+                WorkLoad = new List<StockItem>
                 {
-                    new Task {TaskId = 3, Title = "Computer Work", Comment = "Made all the new labels" },
-                    new StockTask {TaskId = 4, Title = "Stocked", Comment = "Made butters", Quantity = 10, Size = "1/2 lb" }
+                   new StockItem {Size="1/2 Lb", Quantity = 20},
+                   new StockItem {Size="4 Lb", Quantity = 10},
                 }
             };
             AddDay(day2);
@@ -98,7 +98,7 @@ namespace WorkLibrary
         {
             List<string> productNameList = new List<string>();
 
-            foreach(var product in _productList)
+            foreach (var product in _productList)
             {
                 productNameList.Add(product.Name);
             }

@@ -9,8 +9,16 @@ namespace WorkAssistantWebApp.Controllers
 {
     public class DayWorkLoadController : Controller
     {
-        public static WorkRepository _workHistory = new WorkRepository();
+        private static IWorkRepository _workHistory;
 
+
+        public DayWorkLoadController()
+        {
+            if (_workHistory == null)
+            {
+                _workHistory = new WorkRepoDb();
+            }
+        }
         // GET: DayWorkLoad
         public ActionResult Index(int id)
         {

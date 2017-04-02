@@ -10,15 +10,15 @@ namespace WorkLibrary
     {
         public WorkDay()
         {
-            WorkLoad = new List<Task>();
+            WorkLoad = new List<StockItem>();
         }
         public int WorkDayId { get; set; }
         public string Start { get; set; }
         public string End { get; set; }
-        public List<Task> WorkLoad { get; set; }
-
+        public List<StockItem> WorkLoad { get; set; }
         public string Day { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public bool Active { get; set; }
+        public string Comments { get; set; }
     }
 }
