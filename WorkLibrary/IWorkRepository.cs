@@ -10,8 +10,11 @@ namespace WorkLibrary
         void EditWorkDay(WorkDay dayEdit);
         Product GetProductById(int id);
         Product GetProductByName(string productName);
-        List<string> GetProductAll();
+        List<Product> GetProductAll();
         WorkDay GetWorkDay(int id);
         List<WorkDay> GetWorkHistory();
+        StockItem GetStockItem(int id);
+        void CreateStockItem(StockItem newItem);
+
     }
 }

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new {id = Model.WorkDayId})
 </p>
 <table class="table">
     <tr>
@@ -47,7 +47,3 @@
         </tr>
     }
 </table>
-
-@section Scripts{
-    @Scripts.Render("~/Scripts/getContent.js");
-}

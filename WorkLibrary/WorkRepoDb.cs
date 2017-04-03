@@ -10,18 +10,6 @@ namespace WorkLibrary
     {
         public WorkRepoDb()
         {
-            WorkDay newday = new WorkDay
-            {
-                WorkLoad = new List<StockItem>
-                {
-                    new StockItem
-                    {
-                        Start = DateTime.Now.Date.ToShortTimeString()
-                    }
-                }
-            };
-
-            AddDay(newday);
         }
         public void AddDay(WorkDay newDay)
         {
@@ -47,9 +35,15 @@ namespace WorkLibrary
             throw new NotImplementedException();
         }
 
-        public List<string> GetProductAll()
+        public List<Product> GetProductAll()
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                var products = from product in db.ProductTabel
+                               select product;
+
+                return products.ToList();
+            }
         }
 
         public Product GetProductById(int id)
@@ -80,6 +74,23 @@ namespace WorkLibrary
                            select day;
 
                 return days.ToList();
+            }
+        }
+
+        public StockItem GetStockItem(int id)
+        {
+            using (var db = new WorkDbContext())
+            {
+                return db.StockItemTable.Find(id);
+            }
+        }
+
+        public void CreateStockItem(StockItem newItem)
+        {
+            using (var db = new WorkDbContext())
+            {
+                db.StockItemTable.Add(newItem);
+                db.SaveChanges();
             }
         }
     }

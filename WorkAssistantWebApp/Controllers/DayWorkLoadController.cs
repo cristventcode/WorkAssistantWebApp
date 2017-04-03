@@ -11,7 +11,6 @@ namespace WorkAssistantWebApp.Controllers
     {
         private static IWorkRepository _workHistory;
 
-
         public DayWorkLoadController()
         {
             if (_workHistory == null)
@@ -28,24 +27,25 @@ namespace WorkAssistantWebApp.Controllers
         // GET: DayWorkLoad/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_workHistory.GetStockItem(id));
         }
 
         // GET: DayWorkLoad/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.workdayid = id;
             return View();
         }
 
         // POST: DayWorkLoad/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(StockItem newItem, FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                _workHistory.CreateStockItem(newItem);
+                return RedirectToAction("Index", new { id = newItem.WorkDayId });
             }
             catch
             {

@@ -94,16 +94,9 @@ namespace WorkLibrary
             _productList.Add(newProduct);
         }
 
-        public List<string> GetProductAll()
+        public List<Product> GetProductAll()
         {
-            List<string> productNameList = new List<string>();
-
-            foreach (var product in _productList)
-            {
-                productNameList.Add(product.Name);
-            }
-
-            return productNameList.ToList();
+            throw new NotImplementedException();
         }
 
         public Product GetProductById(int id)
@@ -143,6 +136,16 @@ namespace WorkLibrary
             };
             AddProduct(newProduct3);
 
+        }
+
+        public StockItem GetStockItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateStockItem(StockItem newItem)
+        {
+            throw new NotImplementedException();
         }
 
     }

@@ -5,7 +5,7 @@ $(document).ready(function () {
     $.getJSON(pathUrl, function (results) {
         for (var item in results) {
             var element = document.createElement("option");
-            element.innerText = results[item];
+            element.innerText = results[item].Name;
             pulledSelectionList.append(element);
         };
     });

@@ -17,7 +17,7 @@ namespace WorkAssistantWebApp.Controllers
         {
             if (_productHandler == null)
             {
-                _productHandler = new WorkRepository();
+                _productHandler = new WorkRepoDb();
                 //_quizRepo.LoadSampleQuestions();
             }
         }
@@ -29,7 +29,7 @@ namespace WorkAssistantWebApp.Controllers
 
 
         // GET: api/ProductContent
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
             return _productHandler.GetProductAll();
         }

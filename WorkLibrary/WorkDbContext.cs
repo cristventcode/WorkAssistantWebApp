@@ -11,5 +11,7 @@ namespace WorkLibrary
     {
         public DbSet<WorkDay> WorkDayTable { get; set; }
         public DbSet<StockItem> StockItemTable { get; set; }
+
+        public DbSet<Product> ProductTabel { get; set; }
     }
 }
