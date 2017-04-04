@@ -1,49 +1,44 @@
 ﻿@model WorkLibrary.WorkDay
 
 @{
-
+    ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", new {id = Model.WorkDayId})
+    @Html.ActionLink("Create New", "Create", new {id=Model.WorkDayId })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.WorkLoad[0].Size)
+            @Html.DisplayNameFor(model => Model.WorkLoad[0].Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WorkLoad[0].Quantity)
+            @Html.DisplayNameFor(model => Model.WorkLoad[0].Size)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WorkLoad[0].Start)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkLoad[0].End)
+            @Html.DisplayNameFor(model => Model.WorkLoad[0].Quantity)
         </th>
     </tr>
-    @foreach (var item in Model.WorkLoad)
-    {
-        <tr>
-            <td>
-                @Html.Raw(item.Size)
-            </td>
-            <td>
-                @Html.Raw(item.Quantity)
-            </td>
-            <td>
-                @Html.Raw(item.Start)
-            </td>
-            <td>
-                @Html.Raw(item.End)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.StockItemId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.StockItemId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.StockItemId })
-            </td>
-        </tr>
-    }
+
+@foreach (var item in Model.WorkLoad) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StockTaskId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StockTaskId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StockTaskId })
+        </td>
+    </tr>
+}
+
 </table>

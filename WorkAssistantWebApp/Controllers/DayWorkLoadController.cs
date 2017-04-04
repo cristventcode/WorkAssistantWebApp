@@ -27,7 +27,7 @@ namespace WorkAssistantWebApp.Controllers
         // GET: DayWorkLoad/Details/5
         public ActionResult Details(int id)
         {
-            return View(_workHistory.GetStockItem(id));
+            return View(_workHistory.GetStockTask(id));
         }
 
         // GET: DayWorkLoad/Create
@@ -39,12 +39,12 @@ namespace WorkAssistantWebApp.Controllers
 
         // POST: DayWorkLoad/Create
         [HttpPost]
-        public ActionResult Create(StockItem newItem, FormCollection collection)
+        public ActionResult Create(StockTask newItem, FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                _workHistory.CreateStockItem(newItem);
+                _workHistory.CreateStockTask(newItem);
                 return RedirectToAction("Index", new { id = newItem.WorkDayId });
             }
             catch

@@ -61,10 +61,10 @@ namespace WorkLibrary
                 End = "10:45 PM",
                 Day = "Friday",
                 Active = true,
-                WorkLoad = new List<StockItem>
+                WorkLoad = new List<StockTask>
                 {
-                   new StockItem {Size="1.5 Lb", Quantity = 85 },
-                   new StockItem {Size= "1/2 Lb", Quantity = 14}
+                   new StockTask {Size="1.5 Lb", Quantity = 85 },
+                   new StockTask {Size= "1/2 Lb", Quantity = 14}
                 }
             };
             AddDay(day1);
@@ -75,10 +75,10 @@ namespace WorkLibrary
                 End = "10:45 PM",
                 Day = "Saturday",
                 Active = true,
-                WorkLoad = new List<StockItem>
+                WorkLoad = new List<StockTask>
                 {
-                   new StockItem {Size="1/2 Lb", Quantity = 20},
-                   new StockItem {Size="4 Lb", Quantity = 10},
+                   new StockTask {Size="1/2 Lb", Quantity = 20},
+                   new StockTask {Size="4 Lb", Quantity = 10},
                 }
             };
             AddDay(day2);
@@ -115,7 +115,7 @@ namespace WorkLibrary
             {
                 Name = "Citric Acid",
                 OurLot = "449IN" + DateTime.Now.Month,
-                ManufacturerLot = "5701213"
+                ManufactLot = "5701213"
             };
 
             AddProduct(newProduct1);
@@ -124,7 +124,7 @@ namespace WorkLibrary
             {
                 Name = "Beet Root Powder",
                 OurLot = "440IN" + DateTime.Now.Month,
-                ManufacturerLot = "1117160650"
+                ManufactLot = "1117160650"
             };
             AddProduct(newProduct2);
 
@@ -132,18 +132,18 @@ namespace WorkLibrary
             {
                 Name = "Dimethicone 1000",
                 OurLot = "439IN" + DateTime.Now.Month,
-                ManufacturerLot = "J10921C22005"
+                ManufactLot = "J10921C22005"
             };
             AddProduct(newProduct3);
 
         }
 
-        public StockItem GetStockItem(int id)
+        public StockTask GetStockTask(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void CreateStockItem(StockItem newItem)
+        public void CreateStockTask(StockTask newItem)
         {
             throw new NotImplementedException();
         }

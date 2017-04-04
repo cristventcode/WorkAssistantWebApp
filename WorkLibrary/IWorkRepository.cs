@@ -13,8 +13,8 @@ namespace WorkLibrary
         List<Product> GetProductAll();
         WorkDay GetWorkDay(int id);
         List<WorkDay> GetWorkHistory();
-        StockItem GetStockItem(int id);
-        void CreateStockItem(StockItem newItem);
+        StockTask GetStockTask(int id);
+        void CreateStockTask(StockTask newItem);
 
     }
 }
