@@ -10,19 +10,7 @@ namespace WorkLibrary
     {
         public WorkRepoDb()
         {
-            WorkDay newday = new WorkDay
-            {
-                Active = true,
-                Date = DateTime.Now.ToShortDateString(),
-                Day = DateTime.Now.DayOfWeek.ToString(),
-                Start = DateTime.Now.TimeOfDay.ToString(),
-                WorkLoad = new List<StockTask>
-                {
-                    new StockTask {Name = "Citric Acid", Quantity = 50, Size = "1.5 Lb", Start = DateTime.Now.ToShortTimeString() }
-                }
-            };
 
-            AddDay(newday);
         }
         public void AddDay(WorkDay newDay)
         {
@@ -103,6 +91,17 @@ namespace WorkLibrary
             using (var db = new WorkDbContext())
             {
                 db.StockItemTable.Add(newItem);
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateStockTask(StockTask updatedTask)
+        {
+            using(var db = new WorkDbContext())
+            {
+                db.StockItemTable.Attach(updatedTask);
+                var entry = db.Entry(updatedTask);
+                entry.State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
         }

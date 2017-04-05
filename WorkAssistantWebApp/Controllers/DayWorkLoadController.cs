@@ -56,18 +56,18 @@ namespace WorkAssistantWebApp.Controllers
         // GET: DayWorkLoad/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(_workHistory.GetStockTask(id));
         }
 
         // POST: DayWorkLoad/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(StockTask updatedTask, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                _workHistory.UpdateStockTask(updatedTask);
+                return RedirectToAction("Index", new { id = updatedTask.WorkDayId });
             }
             catch
             {

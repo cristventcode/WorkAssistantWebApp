@@ -16,5 +16,7 @@ namespace WorkLibrary
         StockTask GetStockTask(int id);
         void CreateStockTask(StockTask newItem);
 
+        void UpdateStockTask(StockTask updatedTask);
+
     }
 }

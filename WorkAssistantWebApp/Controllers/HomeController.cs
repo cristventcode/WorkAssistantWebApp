@@ -9,8 +9,14 @@ namespace WorkAssistantWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public static WorkRepository _workHistory = new WorkRepository();
-
+        private static IWorkRepository _workHistory;
+        public HomeController()
+        {
+            if (_workHistory == null)
+            {
+                _workHistory = new WorkRepoDb();
+            }
+        }
         public ActionResult Index()
         {
             return View(_workHistory.GetWorkHistory());

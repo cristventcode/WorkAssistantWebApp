@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", new {id=Model.WorkDayId })
+    @Html.ActionLink("Create New", "Create", new { id = Model.WorkDayId })
 </p>
 <table class="table">
     <tr>
@@ -22,23 +22,33 @@
         </th>
     </tr>
 
-@foreach (var item in Model.WorkLoad) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Size)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StockTaskId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StockTaskId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StockTaskId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model.WorkLoad)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Action
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li> @Html.ActionLink("Edit", "Edit", new { id = item.StockTaskId }) </li>
+                        <li> @Html.ActionLink("Details", "Details", new { id = item.StockTaskId }) </li>
+                        <li>@Html.ActionLink("Delete", "Delete", new { id = item.StockTaskId }) </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    }
 
 </table>
+

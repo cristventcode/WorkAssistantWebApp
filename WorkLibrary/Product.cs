@@ -13,8 +13,9 @@ namespace WorkLibrary
         public int ProductId { get; set; }
         [Required]
         public string Name { get; set; }
-        public string ManufactLot { get; set; }
+        public string MlnCurrent { get; set; }
+        public string MlnPrevious { get; set; }
         public string OurLot { get; set; }
-
+        public string Category { get; set; }
     }
 }

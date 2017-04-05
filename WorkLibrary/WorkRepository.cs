@@ -115,7 +115,7 @@ namespace WorkLibrary
             {
                 Name = "Citric Acid",
                 OurLot = "449IN" + DateTime.Now.Month,
-                ManufactLot = "5701213"
+                MlnCurrent = "5701213"
             };
 
             AddProduct(newProduct1);
@@ -124,7 +124,7 @@ namespace WorkLibrary
             {
                 Name = "Beet Root Powder",
                 OurLot = "440IN" + DateTime.Now.Month,
-                ManufactLot = "1117160650"
+                MlnCurrent = "1117160650"
             };
             AddProduct(newProduct2);
 
@@ -132,7 +132,7 @@ namespace WorkLibrary
             {
                 Name = "Dimethicone 1000",
                 OurLot = "439IN" + DateTime.Now.Month,
-                ManufactLot = "J10921C22005"
+                MlnCurrent = "J10921C22005"
             };
             AddProduct(newProduct3);
 
@@ -147,6 +147,12 @@ namespace WorkLibrary
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateStockTask(StockTask updatedTask)
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }
