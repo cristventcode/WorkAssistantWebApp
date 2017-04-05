@@ -24,10 +24,8 @@ $(document).ready(function () {
 });
 
 $(quickAddButton).click(function () {
-    var searchDetails = document.getElementById("search-details"),
-        productSelected = pulledSelectionList.value;
-
-    searchDetails.innerHTML = "";
+    var productSelected = pulledSelectionList.value,
+        stockDate = document.getElementById("stock-date");
 
     for (var item in allProducts) {
         if (productSelected === allProducts[item].Name) {
@@ -35,18 +33,6 @@ $(quickAddButton).click(function () {
         }
     };
 
-    for (var prop in productObject) {
-        var listItem = document.createElement("p"),
-            propValue = productObject[prop];
-
-        listItem.innerText = (propValue !== null) ? propValue : "N/A";
-        searchDetails.appendChild(listItem);
-    }
-
-    searchDetails.parentElement.classList.remove("hidden");
-});
-
-$("#autofill-btn").click(function () {
     var date = new Date();
 
     var inputName = document.getElementById("Name"),
@@ -55,8 +41,10 @@ $("#autofill-btn").click(function () {
 
     inputName.value = productObject.Name;
     inputManufactlot.value = productObject.MlnCurrent;
-    inputOurlot.value = productObject.OurLot + "-" + (date.getMonth() + 1) + date.getDate() + (date.getYear() - 100) + "C";
+    inputOurlot.value = productObject.OurLot + "-" + stockDate.innerText + "C";
 });
+
+
 
 
 

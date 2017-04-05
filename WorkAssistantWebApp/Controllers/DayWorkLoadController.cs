@@ -78,7 +78,7 @@ namespace WorkAssistantWebApp.Controllers
         // GET: DayWorkLoad/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_workHistory.GetStockTask(id));
         }
 
         // POST: DayWorkLoad/Delete/5
@@ -88,8 +88,9 @@ namespace WorkAssistantWebApp.Controllers
             try
             {
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                StockTask task = _workHistory.GetStockTask(id);
+                _workHistory.DeleteStockTask(id);
+                return RedirectToAction("Index" ,new { id = task.WorkDayId});
             }
             catch
             {

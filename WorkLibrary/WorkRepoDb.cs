@@ -105,5 +105,15 @@ namespace WorkLibrary
                 db.SaveChanges();
             }
         }
+
+        public void DeleteStockTask(int id)
+        {
+            using(var db = new WorkDbContext())
+            {
+                var task = db.StockItemTable.Find(id);
+                db.StockItemTable.Remove(task);
+                db.SaveChanges();
+            }
+        }
     }
 }

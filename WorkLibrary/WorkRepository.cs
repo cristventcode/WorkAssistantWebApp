@@ -153,6 +153,11 @@ namespace WorkLibrary
             throw new NotImplementedException();
         }
 
+        public void DeleteStockTask(int id)
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }

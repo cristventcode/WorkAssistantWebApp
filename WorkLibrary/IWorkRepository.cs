@@ -15,8 +15,8 @@ namespace WorkLibrary
         List<WorkDay> GetWorkHistory();
         StockTask GetStockTask(int id);
         void CreateStockTask(StockTask newItem);
-
         void UpdateStockTask(StockTask updatedTask);
+        void DeleteStockTask(int id);
 
     }
 }
