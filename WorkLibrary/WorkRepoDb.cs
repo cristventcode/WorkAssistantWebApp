@@ -23,7 +23,11 @@ namespace WorkLibrary
 
         public void AddProduct(Product newProduct)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                db.ProductTabel.Add(newProduct);
+                db.SaveChanges();
+            }
         }
 
         public void DeleteWorkDay(int id)
@@ -73,9 +77,22 @@ namespace WorkLibrary
             throw new NotImplementedException();
         }
 
-        public Product GetProductByName(string productName)
+        public List<Product> GetProductByCategory(string productCategory)
         {
-            throw new NotImplementedException();
+            if (productCategory == "all")
+            {
+                var allProducts = GetProductAll();
+                return allProducts;
+            }
+
+            using (var db = new WorkDbContext())
+            {
+                var products = from product in db.ProductTabel
+                               where product.Category == productCategory
+                               select product;
+
+                return products.ToList();
+            }
         }
 
         public WorkDay GetWorkDay(int id)

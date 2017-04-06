@@ -11,7 +11,7 @@ namespace WorkLibrary
         Product GetProductById(int id);
         void EditProduct(int id);
         void DeleteProduct(int id);
-        Product GetProductByName(string productName);
+        List<Product> GetProductByCategory(string productCategory);
         List<Product> GetProductAll();
         WorkDay GetWorkDay(int id);
         List<WorkDay> GetWorkHistory();

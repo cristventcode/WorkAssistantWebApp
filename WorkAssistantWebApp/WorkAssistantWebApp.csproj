@@ -280,6 +280,7 @@
     <Content Include="Views\DayWorkLoad\Edit.cshtml" />
     <Content Include="Views\DayWorkLoad\Delete.cshtml" />
     <Content Include="Views\ProductManager\Index.cshtml" />
+    <Content Include="Views\ProductManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

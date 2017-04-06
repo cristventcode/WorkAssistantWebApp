@@ -38,7 +38,7 @@ namespace WorkAssistantWebApp.Controllers
         [HttpGet]
         public Product getProductInfo(string productName)
         {
-            return _productHandler.GetProductByName(productName);
+            throw new NotImplementedException();
         }
 
         // GET: api/ProductContent/5

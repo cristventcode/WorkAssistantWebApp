@@ -6,6 +6,7 @@
     <title>Work Assistant</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="https://use.fontawesome.com/250d8ef9b6.js"></script>
 
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Work Console", "Index", "Work")</li>
-                    <li>@Html.ActionLink("Product Manager", "Index", "ProductManager")</li>
+                    <li>@Html.ActionLink("Product Manager", "../ProductManager/Index", new { productCategory = "all" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">

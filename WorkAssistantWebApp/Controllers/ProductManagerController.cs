@@ -19,9 +19,9 @@ namespace WorkAssistantWebApp.Controllers
             }
         }
         // GET: ProductManager
-        public ActionResult Index()
+        public ActionResult Index(string productCategory)
         {
-            return View(_workHistory.GetProductAll());
+            return View(_workHistory.GetProductByCategory(productCategory));
         }
 
         // GET: ProductManager/Details/5

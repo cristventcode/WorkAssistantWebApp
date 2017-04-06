@@ -15,13 +15,11 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li>
-            @Html.ActionLink("All", "../DayWorkLoad/Index")
-        </li>
-        <li> @Html.ActionLink("Ingredients", "Edit") </li>
-        <li> @Html.ActionLink("Butters", "Details") </li>
-        <li>@Html.ActionLink("Essential Oils", "Delete") </li>
-        <li>@Html.ActionLink("Fragrance Oils", "Delete") </li>
+        <li>@Html.ActionLink("All", "Index", new { productCategory = "all" })</li>
+        <li>@Html.ActionLink("Ingredients", "Index", new { productCategory = "Ingredient" })</li>
+        <li>@Html.ActionLink("Butters", "Index", new { productCategory = "Butter" })</li>
+        <li>@Html.ActionLink("Essential Oils", "Index", new { productCategory = "Essential Oil" })</li>
+        <li>@Html.ActionLink("Frangrance Oils", "Index", new { productCategory = "Frangrance Oil" })</li>
     </ul>
 </div>
 <br />

@@ -114,9 +114,9 @@ namespace WorkLibrary
             return _productList.Find(product => product.ProductId == id);
         }
 
-        public Product GetProductByName(string productName)
+        public List<Product> GetProductByCategory(string productName)
         {
-            return _productList.Find(product => product.Name == productName);
+            throw new NotImplementedException();
         }
 
         public void AddSampleProducts()
