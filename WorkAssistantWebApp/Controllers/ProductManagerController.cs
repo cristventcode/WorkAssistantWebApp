@@ -44,7 +44,7 @@ namespace WorkAssistantWebApp.Controllers
             {
                 // TODO: Add insert logic here
                 _workHistory.AddProduct(newProduct);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { productCategory = "all" });
             }
             catch
             {

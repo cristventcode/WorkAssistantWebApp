@@ -1,0 +1,58 @@
+﻿@model WorkLibrary.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MlnCurrent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MlnCurrent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MlnPrevious)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MlnPrevious)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OurLot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OurLot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+    @Html.ActionLink("Back to List", "Index", new { productCategory = "all" })
+</p>

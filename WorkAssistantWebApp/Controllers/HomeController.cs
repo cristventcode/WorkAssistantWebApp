@@ -19,7 +19,7 @@ namespace WorkAssistantWebApp.Controllers
         }
         public ActionResult Index()
         {
-            return View(_workHistory.GetWorkHistory());
+            return View();
         }
 
         public ActionResult About()

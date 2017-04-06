@@ -1,18 +1,11 @@
-﻿@model IEnumerable<WorkLibrary.WorkDay>
-
-
-<div class="row">
-    <br />
+﻿<div class="row">
     <div class="container">
-        <h4> New </h4>
+        <h3> Quick Start </h3>
+        <hr />
+        <h4> New Day</h4>
         <a href="~/Work/Create"><button class="btn btn-xs btn-success">Create New Day</button></a>
         <hr />
-        <h4> Recent Days </h4>
-        <ul class="list-group">
-            @foreach (var item in Model)
-            {
-                <li class="list-group-item"> @item.Day - @item.Date </li>
-            }
-        </ul>
+        <h4> New Product </h4>
+        <a href="~/Work/Create"><button class="btn btn-xs btn-success">Create New Product</button></a>
     </div>
 </div>
