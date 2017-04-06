@@ -64,17 +64,31 @@ namespace WorkLibrary
 
         public Product GetProductById(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                return db.ProductTabel.Find(id);
+            }
         }
 
-        public void EditProduct(int id)
+        public void EditProduct(Product updatedProduct)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                db.ProductTabel.Attach(updatedProduct);
+                var entry = db.Entry(updatedProduct);
+                entry.State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
         public void DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                var product = db.ProductTabel.Find(id);
+                db.ProductTabel.Remove(product);
+                db.SaveChanges();
+            }
         }
 
         public List<Product> GetProductByCategory(string productCategory)

@@ -60,13 +60,13 @@ namespace WorkAssistantWebApp.Controllers
 
         // POST: ProductManager/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Product updatedProduct, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-                _workHistory.EditProduct(id);
-                return RedirectToAction("Index");
+                _workHistory.EditProduct(updatedProduct);
+                return RedirectToAction("Index", new { productCategory = "all" });
             }
             catch
             {
@@ -77,7 +77,7 @@ namespace WorkAssistantWebApp.Controllers
         // GET: ProductManager/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_workHistory.GetProductById(id));
         }
 
         // POST: ProductManager/Delete/5
@@ -87,8 +87,8 @@ namespace WorkAssistantWebApp.Controllers
             try
             {
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                _workHistory.DeleteProduct(id);
+                return RedirectToAction("Index", new { productCategory = "all" });
             }
             catch
             {

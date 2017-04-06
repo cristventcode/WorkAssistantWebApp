@@ -99,7 +99,7 @@ namespace WorkLibrary
             throw new NotImplementedException();
         }
 
-        public void EditProduct(int id)
+        public void EditProduct(Product updatedProduct)
         {
             throw new NotImplementedException();
         }

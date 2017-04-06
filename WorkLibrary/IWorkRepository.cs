@@ -9,7 +9,7 @@ namespace WorkLibrary
         void DeleteWorkDay(int id);
         void EditWorkDay(WorkDay dayEdit);
         Product GetProductById(int id);
-        void EditProduct(int id);
+        void EditProduct(Product updatedProduct);
         void DeleteProduct(int id);
         List<Product> GetProductByCategory(string productCategory);
         List<Product> GetProductAll();
