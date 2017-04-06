@@ -99,6 +99,16 @@ namespace WorkLibrary
             throw new NotImplementedException();
         }
 
+        public void EditProduct(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProduct(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetProductById(int id)
         {
             return _productList.Find(product => product.ProductId == id);

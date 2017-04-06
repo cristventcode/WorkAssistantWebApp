@@ -9,6 +9,8 @@ namespace WorkLibrary
         void DeleteWorkDay(int id);
         void EditWorkDay(WorkDay dayEdit);
         Product GetProductById(int id);
+        void EditProduct(int id);
+        void DeleteProduct(int id);
         Product GetProductByName(string productName);
         List<Product> GetProductAll();
         WorkDay GetWorkDay(int id);
@@ -17,6 +19,5 @@ namespace WorkLibrary
         void CreateStockTask(StockTask newItem);
         void UpdateStockTask(StockTask updatedTask);
         void DeleteStockTask(int id);
-
     }
 }

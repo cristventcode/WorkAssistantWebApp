@@ -28,12 +28,23 @@ namespace WorkLibrary
 
         public void DeleteWorkDay(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                var day = db.WorkDayTable.Find(id);
+                db.WorkDayTable.Remove(day);
+                db.SaveChanges();
+            }
         }
 
         public void EditWorkDay(WorkDay dayEdit)
         {
-            throw new NotImplementedException();
+            using (var db = new WorkDbContext())
+            {
+                db.WorkDayTable.Attach(dayEdit);
+                var entry = db.Entry(dayEdit);
+                entry.State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
         public List<Product> GetProductAll()
@@ -48,6 +59,16 @@ namespace WorkLibrary
         }
 
         public Product GetProductById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditProduct(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProduct(int id)
         {
             throw new NotImplementedException();
         }
@@ -97,7 +118,7 @@ namespace WorkLibrary
 
         public void UpdateStockTask(StockTask updatedTask)
         {
-            using(var db = new WorkDbContext())
+            using (var db = new WorkDbContext())
             {
                 db.StockItemTable.Attach(updatedTask);
                 var entry = db.Entry(updatedTask);
@@ -108,7 +129,7 @@ namespace WorkLibrary
 
         public void DeleteStockTask(int id)
         {
-            using(var db = new WorkDbContext())
+            using (var db = new WorkDbContext())
             {
                 var task = db.StockItemTable.Find(id);
                 db.StockItemTable.Remove(task);

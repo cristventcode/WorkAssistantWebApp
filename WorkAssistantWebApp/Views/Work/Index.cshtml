@@ -4,52 +4,81 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<br />
-<h4> Active Day</h4>
-<table class="table">
-    @foreach (var item in Model)
-    {
-        if (item.Active == true)
-        {
-            <tr>
-                <td>
-                    @item.Day - @item.Date
-                </td>
-                <td>
-                    @Html.ActionLink("Workload Actions", "../DayWorkLoad/Index", new { id = item.WorkDayId }) |
-                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId })
-                </td>
-            </tr>
-        }
-    }
-
-</table>
+<h3> Day Manager </h3>
 <hr />
-<h4> All Past Days</h4>
-<table class="table">
+<a href="~/Work/Create"><button class="btn btn-xs btn-success">Create New Day</button></a>
 
-    @foreach (var item in Model)
-    {
-        if (item.Active == false)
-        {
-            <tr>
-                <td>
-                    @item.Day - @item.Date
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId })
-                </td>
-            </tr>
-        }
-    }
+<hr />
 
-</table>
+<div class="row">
+
+    <div class="col-sm-6">
+        <h4> Active Day</h4>
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                if (item.Active == true)
+                {
+                    <tr>
+                        <td>
+                            @item.Day - @item.Date
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Action
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        @Html.ActionLink("Stock List", "../DayWorkLoad/Index", new { id = item.WorkDayId })
+                                    </li>
+                                    <li> @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) </li>
+                                    <li> @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) </li>
+                                    <li>@Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId }) </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+    <div class="col-sm-6">
+
+        <h4> All Days</h4>
+        <table class="table">
+
+            @foreach (var item in Model)
+            {
+                if (item.Active == false)
+                {
+                    <tr>
+                        <td>
+                            @item.Day - @item.Date
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Action
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li>
+                                        @Html.ActionLink("Stock List", "../DayWorkLoad/Index", new { id = item.WorkDayId })
+                                    </li>
+                                    <li> @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) </li>
+                                    <li> @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) </li>
+                                    <li>@Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId }) </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+
+</div>
