@@ -4,52 +4,65 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3> Stock List </h3>
 <hr class="heading-divider" />
+<a href="~/DayWorkLoad/Create/@Model.WorkDayId"><button class="btn btn-xs btn-success">Create New Stock</button></a>
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { id = Model.WorkDayId })
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => Model.WorkLoad[0].Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => Model.WorkLoad[0].Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => Model.WorkLoad[0].Quantity)
-        </th>
-    </tr>
+<hr />
 
-    @foreach (var item in Model.WorkLoad)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                <div class="dropdown">
-                    <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Action
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li> @Html.ActionLink("Edit", "Edit", new { id = item.StockTaskId }) </li>
-                        <li> @Html.ActionLink("Details", "Details", new { id = item.StockTaskId }) </li>
-                        <li>@Html.ActionLink("Delete", "Delete", new { id = item.StockTaskId }) </li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-    }
+<h4> Product </h4>
+<div class="row">
+    <div class="col-sm-8">
 
-</table>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => Model.WorkLoad[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.WorkLoad[0].Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.WorkLoad[0].Quantity)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+
+            @foreach (var item in Model.WorkLoad)
+            {
+                <tr class="table-item">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Action
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li> @Html.ActionLink("Edit", "Edit", new { id = item.StockTaskId }) </li>
+                                <li> @Html.ActionLink("Details", "Details", new { id = item.StockTaskId }) </li>
+                                <li>@Html.ActionLink("Delete", "Delete", new { id = item.StockTaskId }) </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "../Work/Index")
+</div>
 

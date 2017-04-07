@@ -4,18 +4,19 @@
     border-top: 1px solid grey;
 }
 
-.active-day {
-    background-color: #eff7eb;
-}
-
-.inactive-day {
+.table-item:nth-child(even) {
     background-color: #f7f7f7;
 }
 
-.product-list-item:nth-child(even) {
-    background-color: #f7f7f7;
+.table-item:hover {
+    background-color: #ecf3f9;
 }
 
-.product-list-item:hover {
-    background-color: #eff7eb;
+
+.table-day-col {
+    width: 70%;
+}
+
+.table {
+    border: 1px solid lightgrey;
 }

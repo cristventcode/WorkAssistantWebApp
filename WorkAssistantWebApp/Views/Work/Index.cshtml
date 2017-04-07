@@ -11,16 +11,20 @@
 <hr />
 
 <div class="row">
-
-    <div class="col-sm-12">
+    <div class="col-sm-8">
         <h4> Active</h4>
         <table class="table">
             @foreach (var item in Model)
             {
                 if (item.Active == true)
                 {
-                    <tr class="active-day">
-                        <td>
+                    <tr>
+                        <th> Day / Date </th>
+                        <th> Actions </th>
+
+                    </tr>
+                    <tr class="table-item">
+                        <td class="table-day-col">
                             @item.Day - @item.Date
                         </td>
                         <td>
@@ -31,8 +35,9 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li>
-                                        @Html.ActionLink("Stock List", "../DayWorkLoad/Index", new { id = item.WorkDayId })
+                                        @Html.ActionLink("Stock Sheet", "../DayWorkLoad/Index", new { id = item.WorkDayId })
                                     </li>
+                                    <li> @Html.ActionLink("Print Stock Sheet", "Edit", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) </li>
                                     <li>@Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId }) </li>
@@ -45,17 +50,23 @@
 
         </table>
     </div>
-    <div class="col-sm-12">
-
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-8">
         <h4> All Days</h4>
         <table class="table">
+            <tr>
+                <th> Day / Date </th>
+                <th> Actions </th>
 
+            </tr>
             @foreach (var item in Model)
             {
                 if (item.Active == false)
                 {
-                    <tr class="inactive-day">
-                        <td>
+                    <tr class="table-item">
+                        <td class="table-day-col">
                             @item.Day - @item.Date
                         </td>
                         <td>
@@ -66,8 +77,9 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <li>
-                                        @Html.ActionLink("Stock List", "../DayWorkLoad/Index", new { id = item.WorkDayId })
+                                        @Html.ActionLink("Stock Sheet", "../DayWorkLoad/Index", new { id = item.WorkDayId })
                                     </li>
+                                    <li> @Html.ActionLink("Print Stock Sheet", "PrintStockSheet", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) </li>
                                     <li>@Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId }) </li>
@@ -80,5 +92,4 @@
 
         </table>
     </div>
-
 </div>

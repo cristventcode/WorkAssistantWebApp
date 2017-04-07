@@ -27,7 +27,7 @@
 <br />
 <h4> @Html.Raw(ViewBag.CategoryText) </h4>
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-sm-8">
         <table class="table">
             <tr>
                 <th>
@@ -43,7 +43,7 @@
 
             @foreach (var item in Model)
             {
-                <tr class="product-list-item">
+                <tr class="table-item">
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>

@@ -25,6 +25,11 @@ namespace WorkAssistantWebApp.Controllers
             return View(_workHistory.GetWorkHistory());
         }
 
+        public ActionResult PrintStockSheet(int id)
+        {
+            return View(_workHistory.GetWorkDay(id));
+        }
+
         // GET: Work/Details/5
         public ActionResult Details(int id)
         {

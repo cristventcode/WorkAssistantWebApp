@@ -1,0 +1,77 @@
+﻿@model WorkLibrary.WorkDay
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3> Stock List </h3>
+<hr class="heading-divider" />
+<a href="~/DayWorkLoad/Create/@Model.WorkDayId"><button class="btn btn-xs btn-success">Create New Stock</button></a>
+
+<hr />
+
+<h4> Name : Cristian </h4>
+<h5> Date : @Model.Day , @Model.Date</h5>
+<div class="row">
+    <div class="col-sm-12">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Start
+                </th>
+                <th>
+                    End
+                </th>
+                <th>
+                    Manufacturer Lot
+                </th>
+                <th>
+                    Our Lot
+                </th>
+            </tr>
+
+            @foreach (var item in Model.WorkLoad)
+            {
+                <tr class="table-item">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Start)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.End)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManufactLot)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OurLot)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "../Work/Index")
+</div>
+

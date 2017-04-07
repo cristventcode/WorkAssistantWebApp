@@ -285,6 +285,7 @@
     <Content Include="Views\ProductManager\Edit.cshtml" />
     <Content Include="Views\ProductManager\Delete.cshtml" />
     <Content Include="Views\ProductManager\Details.cshtml" />
+    <Content Include="Views\Work\PrintStockSheet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
