@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Assistant</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/custom-css.css")
     @Scripts.Render("~/bundles/modernizr")
+
     <script src="https://use.fontawesome.com/250d8ef9b6.js"></script>
 
 </head>
@@ -24,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Day Manager", "Index", "Work")</li>
-                    <li>@Html.ActionLink("Product Manager", "../ProductManager/Index", new { productCategory = "all" })</li>
+                    <li>@Html.ActionLink("Product Manager", "../ProductManager/Index", new { productCategory = "All" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">

@@ -93,7 +93,7 @@ namespace WorkLibrary
 
         public List<Product> GetProductByCategory(string productCategory)
         {
-            if (productCategory == "all")
+            if (productCategory == "All")
             {
                 var allProducts = GetProductAll();
                 return allProducts;

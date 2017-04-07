@@ -5,23 +5,23 @@
 }
 
 <h3> Day Manager </h3>
-<hr />
+<hr class="heading-divider" />
 <a href="~/Work/Create"><button class="btn btn-xs btn-success">Create New Day</button></a>
 
 <hr />
 
 <div class="row">
 
-    <div class="col-sm-6">
-        <h4> Active Day</h4>
+    <div class="col-sm-12">
+        <h4> Active</h4>
         <table class="table">
             @foreach (var item in Model)
             {
                 if (item.Active == true)
                 {
-                    <tr>
+                    <tr class="active-day">
                         <td>
-                              @item.Day - @item.Date
+                            @item.Day - @item.Date
                         </td>
                         <td>
                             <div class="dropdown">
@@ -45,7 +45,7 @@
 
         </table>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
 
         <h4> All Days</h4>
         <table class="table">
@@ -54,7 +54,7 @@
             {
                 if (item.Active == false)
                 {
-                    <tr>
+                    <tr class="inactive-day">
                         <td>
                             @item.Day - @item.Date
                         </td>

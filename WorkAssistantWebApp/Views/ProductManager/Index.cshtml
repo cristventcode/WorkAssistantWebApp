@@ -5,7 +5,7 @@
 }
 
 <h3>Products Manager</h3>
-<hr />
+<hr class="heading-divider" />
 <a href="~/ProductManager/Create"><button class="btn btn-xs btn-success">Create New Product</button></a>
 <hr />
 
@@ -15,7 +15,7 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li>@Html.ActionLink("All", "Index", new { productCategory = "all" })</li>
+        <li>@Html.ActionLink("All", "Index", new { productCategory = "All" })</li>
         <li>@Html.ActionLink("Ingredients", "Index", new { productCategory = "Ingredient" })</li>
         <li>@Html.ActionLink("Butters", "Index", new { productCategory = "Butter" })</li>
         <li>@Html.ActionLink("Essential Oils", "Index", new { productCategory = "Essential Oil" })</li>
@@ -25,46 +25,47 @@
     </ul>
 </div>
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OurLot)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
+<h4> @Html.Raw(ViewBag.CategoryText) </h4>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OurLot)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OurLot)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                <div class="dropdown">
-                    <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Action
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li> @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) </li>
-                        <li> @Html.ActionLink("Details", "Details", new { id = item.ProductId }) </li>
-                        <li>@Html.ActionLink("Delete", "Delete", new { id = item.ProductId }) </li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr class="product-list-item">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OurLot)
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Action
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li> @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) </li>
+                                <li> @Html.ActionLink("Details", "Details", new { id = item.ProductId }) </li>
+                                <li>@Html.ActionLink("Delete", "Delete", new { id = item.ProductId }) </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+    </div>
+</div>

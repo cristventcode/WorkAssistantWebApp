@@ -21,6 +21,7 @@ namespace WorkAssistantWebApp.Controllers
         // GET: ProductManager
         public ActionResult Index(string productCategory)
         {
+            ViewBag.CategoryText = productCategory;
             return View(_workHistory.GetProductByCategory(productCategory));
         }
 
