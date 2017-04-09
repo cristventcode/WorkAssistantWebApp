@@ -37,7 +37,7 @@
                                     <li>
                                         @Html.ActionLink("Stock Sheet", "../DayWorkLoad/Index", new { id = item.WorkDayId })
                                     </li>
-                                    <li> @Html.ActionLink("Print Stock Sheet", "Edit", new { id = item.WorkDayId }) </li>
+                                    <li> @Html.ActionLink("Print Stock Sheet", "PrintStockSheet", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Edit", "Edit", new { id = item.WorkDayId }) </li>
                                     <li> @Html.ActionLink("Details", "Details", new { id = item.WorkDayId }) </li>
                                     <li>@Html.ActionLink("Delete", "Delete", new { id = item.WorkDayId }) </li>
