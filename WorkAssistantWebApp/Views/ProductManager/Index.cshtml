@@ -17,9 +17,13 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li>@Html.ActionLink("All", "Index", new { productCategory = "All" })</li>
         <li>@Html.ActionLink("Ingredients", "Index", new { productCategory = "Ingredient" })</li>
+        <li>@Html.ActionLink("Vegetable Oil", "Index", new { productCategory = "Vegetable Oil" })</li>
         <li>@Html.ActionLink("Butters", "Index", new { productCategory = "Butter" })</li>
+        <li>@Html.ActionLink("Beeswax", "Index", new { productCategory = "Beeswax" })</li>
+        <li>@Html.ActionLink("Clay Mud & Salt", "Index", new { productCategory = "Clay Mud & Salt" })</li>
+        <li>@Html.ActionLink("Colors", "Index", new { productCategory = "Color" })</li>
         <li>@Html.ActionLink("Essential Oils", "Index", new { productCategory = "Essential Oil" })</li>
-        <li>@Html.ActionLink("Fragrance Oils", "Index", new { productCategory = "Fragrance Oil" })</li>
+        <li>@Html.ActionLink("Fragrant Oils", "Index", new { productCategory = "Fragrant Oil" })</li>
         <li>@Html.ActionLink("N/A", "Index", new { productCategory = "N/A" })</li>
 
     </ul>
@@ -31,10 +35,10 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Name)
+                    Product Name
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.OurLot)
+                    Our Lot
                 </th>
                 <th>
                     Actions

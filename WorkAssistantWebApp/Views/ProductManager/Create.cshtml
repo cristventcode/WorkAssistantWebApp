@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="Name">Name</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MlnCurrent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="MlnCurrent">Mln Current</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MlnCurrent, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MlnCurrent, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MlnPrevious, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="MlnPrevious">Mln Previous</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MlnPrevious, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MlnPrevious, "", new { @class = "text-danger" })
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.OurLot, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="OurLot">Our Lot</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.OurLot, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.OurLot, "", new { @class = "text-danger" })
@@ -48,12 +48,27 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="Category">Category</label>
             <div class="col-md-10">
                 <select class="form-control" id="Category" name="Category">
                     <option>Ingredient</option>
                     <option>Butter</option>
                     <option>Essential Oil</option>
+
+
+                    <li>@Html.ActionLink("Ingredients", "Index", new { productCategory = "Ingredient" })</li>
+                    <li>@Html.ActionLink("Vegetable Oil", "Index", new { productCategory = "Vegetable Oil" })</li>
+                    <li>@Html.ActionLink("Butters", "Index", new { productCategory = "Butter" })</li>
+                    <li>@Html.ActionLink("Beeswax", "Index", new { productCategory = "Beeswax" })</li>
+                    <li>@Html.ActionLink("Clay Mud & Salt", "Index", new { productCategory = "Clay Mud & Salt" })</li>
+                    <li>@Html.ActionLink("Colors", "Index", new { productCategory = "Color" })</li>
+                    <li>@Html.ActionLink("Essential Oils", "Index", new { productCategory = "Essential Oil" })</li>
+                    <li>@Html.ActionLink("Fragrant Oils", "Index", new { productCategory = "Fragrant Oil" })</li>
+                    <li>@Html.ActionLink("N/A", "Index", new { productCategory = "N/A" })</li>
+
+
+
+
                     <option>Fragrance Oil</option>
                 </select>
                 @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
@@ -69,7 +84,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index", new {productCategory = "All"})
+    @Html.ActionLink("Back to List", "Index", new { productCategory = "All" })
 </div>
 
 @section Scripts {
