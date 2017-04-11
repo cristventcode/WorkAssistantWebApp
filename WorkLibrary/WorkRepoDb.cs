@@ -70,6 +70,18 @@ namespace WorkLibrary
             }
         }
 
+        public List<Product> GetProductByName(string productName)
+        {
+            using (var db = new WorkDbContext())
+            {
+                var foundProduct = from product in db.ProductTabel
+                                   where product.Name == productName
+                                   select product;
+                return foundProduct.ToList();
+            }
+        }
+
+
         public void EditProduct(Product updatedProduct)
         {
             using (var db = new WorkDbContext())

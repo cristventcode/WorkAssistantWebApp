@@ -21,9 +21,34 @@
     border: 1px solid lightgrey;
 }
 
+.time-input {
+    width: 195px;
+    display: inline-block;
+}
+
+.type-input {
+    width: 195px;
+    display: inline-block;
+}
+
+.time-input-btn {
+    width: 80px;
+}
+
+.type-dropdown {
+    display: inline;
+}
+
+    .type-dropdown ul {
+        margin-top: 12px;
+    }
+
+    .type-dropdown button {
+        width: 80px;
+    }
 
 @media print {
-    a, footer, .btn{
+    a, footer, .btn {
         display: none;
     }
 }

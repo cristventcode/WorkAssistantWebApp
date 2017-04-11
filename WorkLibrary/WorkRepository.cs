@@ -47,6 +47,10 @@ namespace WorkLibrary
             _workList.Remove(GetWorkDay(id));
         }
 
+        public List<Product> GetProductByName(string productName)
+        {
+            throw new NotFiniteNumberException();
+        }
 
         public void EditWorkDay(WorkDay dayEdit)
         {

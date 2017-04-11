@@ -14,15 +14,15 @@
     <div class="col-sm-8">
         <h4> Active</h4>
         <table class="table">
+            <tr>
+                <th> Day / Date </th>
+                <th> Actions </th>
+
+            </tr>
             @foreach (var item in Model)
             {
                 if (item.Active == true)
                 {
-                    <tr>
-                        <th> Day / Date </th>
-                        <th> Actions </th>
-
-                    </tr>
                     <tr class="table-item">
                         <td class="table-day-col">
                             @item.Day - @item.Date

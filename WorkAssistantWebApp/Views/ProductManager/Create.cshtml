@@ -52,24 +52,14 @@
             <div class="col-md-10">
                 <select class="form-control" id="Category" name="Category">
                     <option>Ingredient</option>
+                    <option>Vegetable Oil</option>
                     <option>Butter</option>
+                    <option>Beeswax</option>
+                    <option>Clay Mud & Salt</option>
+                    <option>Colors</option>
                     <option>Essential Oil</option>
-
-
-                    <li>@Html.ActionLink("Ingredients", "Index", new { productCategory = "Ingredient" })</li>
-                    <li>@Html.ActionLink("Vegetable Oil", "Index", new { productCategory = "Vegetable Oil" })</li>
-                    <li>@Html.ActionLink("Butters", "Index", new { productCategory = "Butter" })</li>
-                    <li>@Html.ActionLink("Beeswax", "Index", new { productCategory = "Beeswax" })</li>
-                    <li>@Html.ActionLink("Clay Mud & Salt", "Index", new { productCategory = "Clay Mud & Salt" })</li>
-                    <li>@Html.ActionLink("Colors", "Index", new { productCategory = "Color" })</li>
-                    <li>@Html.ActionLink("Essential Oils", "Index", new { productCategory = "Essential Oil" })</li>
-                    <li>@Html.ActionLink("Fragrant Oils", "Index", new { productCategory = "Fragrant Oil" })</li>
-                    <li>@Html.ActionLink("N/A", "Index", new { productCategory = "N/A" })</li>
-
-
-
-
-                    <option>Fragrance Oil</option>
+                    <option>Fragrant Oil</option>
+                    <option>N/A</option>
                 </select>
                 @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
             </div>

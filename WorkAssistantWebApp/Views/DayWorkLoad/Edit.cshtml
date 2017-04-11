@@ -29,7 +29,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+                <select class="form-control" id="Size" name="Size">
+                    <option> @Model.Size</option>
+                </select>
                 @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,19 +44,21 @@
             </div>
         </div>
 
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Start, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="Start"> Start </label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                <input type="text" id="Start" name="Start" value="@Model.Start" class="form-control time-input" />
+                <button type="button" class="btn btn-md btn-default time-input-btn">Set Cur</button>
             </div>
         </div>
 
+
         <div class="form-group">
-            @Html.LabelFor(model => model.End, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="End"> End </label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.End, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.End, "", new { @class = "text-danger" })
+                <input type="text" id="End" name="End" value="@Model.End" class="form-control time-input" />
+                <button type="button" class="btn btn-md btn-default time-input-btn">Set Cur</button>
             </div>
         </div>
 
@@ -88,4 +92,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/pageActions.js")
 }
