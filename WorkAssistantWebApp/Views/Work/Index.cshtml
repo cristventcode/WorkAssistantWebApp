@@ -10,9 +10,13 @@
 
 <hr />
 
-<div class="row">
-    <div class="col-sm-8">
-        <h4> Active</h4>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Active Day</a></li>
+    <li><a data-toggle="tab" href="#menu1">All Days</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
         <table class="table">
             <tr>
                 <th> Day / Date </th>
@@ -30,7 +34,7 @@
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Action
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -50,11 +54,7 @@
 
         </table>
     </div>
-</div>
-<hr />
-<div class="row">
-    <div class="col-sm-8">
-        <h4> All Days</h4>
+    <div id="menu1" class="tab-pane fade">
         <table class="table">
             <tr>
                 <th> Day / Date </th>
@@ -72,7 +72,7 @@
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Action
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -92,4 +92,5 @@
 
         </table>
     </div>
+
 </div>
